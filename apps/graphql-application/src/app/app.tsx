@@ -1,41 +1,28 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import styles from './app.module.css';
-
-import NxWelcome from './nx-welcome';
-
 import { Route, Routes, Link } from 'react-router-dom';
+import { SiGraphql } from 'react-icons/si';
+import Client from './client/client';
 
 export function App() {
   return (
     <div>
-      <NxWelcome title="graphql-application" />
-
-      {/* START: routes */}
-      {/* These routes and navigation have been generated for you */}
-      {/* Feel free to move and update them to fit your needs */}
-      <br />
-      <hr />
-      <br />
-      <div role="navigation">
+      <div role="navigation" className={styles.navigation}>
+        <div className={styles.logo}>
+          <SiGraphql className={styles.logoImg} />
+          <h1>GraphQL Application</h1>
+        </div>
         <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/page-2">Page 2</Link>
-          </li>
+          <Link to="/">
+            <li>Home</li>
+          </Link>
+          <Link to="/page-2">
+            <li>Page 2 </li>
+          </Link>
         </ul>
       </div>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <div>
-              This is the generated root route.{' '}
-              <Link to="/page-2">Click here for page 2.</Link>
-            </div>
-          }
-        />
+        <Route path="/" element={<Client />} />
         <Route
           path="/page-2"
           element={
@@ -45,7 +32,6 @@ export function App() {
           }
         />
       </Routes>
-      {/* END: routes */}
     </div>
   );
 }

@@ -1,1 +1,36 @@
-/* Your styles goes here. */
+.navigation {
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0;
+}
+
+.navigation ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.navigation ul li {
+  padding: 5px 20px;
+  border-radius: 100vmax;
+}
+.navigation ul li:hover {
+  color: rgb(255, 0, 170);
+  background-color: rgb(255, 239, 248);
+  transition: 0.5s;
+}
+
+.navigation .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 24px;
+  padding: 0 20px;
+  color: rgb(255, 0, 170);
+}
+
+.navigation .logoImg {
+  font-size: 32px;
+}
