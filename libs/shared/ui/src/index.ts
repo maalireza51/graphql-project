@@ -1,1 +1,2 @@
-export * from './lib/shared-ui';
+export * from './Modal/Modal';
+export * from './Input/Input';

@@ -1,0 +1,25 @@
+.add-btn {
+  flex: 1;
+  justify-content: end;
+  display: flex;
+  gap: 10px;
+}
+
+.add-btn > button {
+  width: 80px;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 10px 12px;
+  cursor: pointer;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+
+.add-btn > button:active {
+  box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.add-btn > button:hover {
+  color: rgb(255, 0, 170);
+  background-color: rgb(255, 239, 248);
+}

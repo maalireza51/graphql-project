@@ -4,6 +4,13 @@ import { ClientInterface } from '@shared/types';
 import ClientRow from './ClientRow/clientRow';
 import { GET_CLIENTS } from '../../queries/clients';
 
+const tableHead: ClientInterface = {
+  id: 'ID',
+  email: 'EMAIL',
+  name: 'NAME',
+  phone: 'PHONE',
+};
+
 export function Client() {
   const { loading, error, data } = useQuery<{ clients: ClientInterface[] }>(
     GET_CLIENTS
@@ -12,12 +19,13 @@ export function Client() {
     <div>
       {loading && <p className={styles.loading}>Loading...</p>}
       {error && <p>Error! {error.message}</p>}
-      <ul>
+      <ul className={styles['clients-list']}>
+        <ClientRow client={tableHead} head />
         {!loading &&
           !error &&
           data &&
           data?.clients?.map((client: ClientInterface) => (
-            <ClientRow client={client} />
+            <ClientRow key={client.id} client={client} />
           ))}
       </ul>
     </div>

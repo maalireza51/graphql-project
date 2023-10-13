@@ -2,9 +2,10 @@
   display: flex;
   align-items: center;
   background-color: #f0f0f0;
+  padding: 0 20px;
 }
 
-.navigation ul {
+.navigation > ul {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,11 +13,11 @@
   list-style: none;
 }
 
-.navigation ul li {
+.navigation > ul li {
   padding: 5px 20px;
   border-radius: 100vmax;
 }
-.navigation ul li:hover {
+.navigation > ul li:hover {
   color: rgb(255, 0, 170);
   background-color: rgb(255, 239, 248);
   transition: 0.5s;
@@ -27,7 +28,6 @@
   align-items: center;
   gap: 0.5rem;
   font-size: 24px;
-  padding: 0 20px;
   color: rgb(255, 0, 170);
 }
 

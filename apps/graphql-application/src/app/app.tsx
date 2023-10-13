@@ -3,6 +3,7 @@ import styles from './app.module.css';
 import { Route, Routes, Link } from 'react-router-dom';
 import { SiGraphql } from 'react-icons/si';
 import Client from './client/client';
+import ImportSection from './ImportSection/ImportSection';
 
 export function App() {
   return (
@@ -14,17 +15,18 @@ export function App() {
         </div>
         <ul>
           <Link to="/">
-            <li>Home</li>
+            <li>Clients</li>
           </Link>
-          <Link to="/page-2">
-            <li>Page 2 </li>
+          <Link to="/projects">
+            <li>Projects </li>
           </Link>
         </ul>
+        <ImportSection />
       </div>
       <Routes>
         <Route path="/" element={<Client />} />
         <Route
-          path="/page-2"
+          path="/projects"
           element={
             <div>
               <Link to="/">Click here to go back to root page.</Link>

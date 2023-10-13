@@ -6,10 +6,28 @@
   font-weight: 700;
 }
 
-.client span {
-  font-size: 24px;
-  color: rgb(204, 0, 0);
+.client:hover {
+  background-color: #f0f0f0;
+}
+
+.client > p {
+  display: flex;
+  flex: 1 0 0%;
+  justify-content: center;
+  align-items: center;
+}
+
+.client .delete-btn {
+  color: #fff;
+  background-color: rgb(204, 0, 0);
+  padding: 10px;
+  border-radius: 8px;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.client .delete-btn:hover {
+  background-color: rgb(204, 0, 0, 0.5);
 }
 
 .loading {
