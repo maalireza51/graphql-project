@@ -4,7 +4,7 @@ import { useMutation } from '@apollo/client';
 import { ADD_CLIENT } from '../../../mutations/clientMutations';
 import { GET_CLIENTS } from '../../../queries/clients';
 import { ClientInterface } from '@shared/types';
-import ClientForm, { FormInitialValueType } from '../../ClientForm/ClientForm';
+import ClientForm, { FormInitialValueType } from './ClientForm/ClientForm';
 
 /* eslint-disable-next-line */
 export interface ImportClientProps {}

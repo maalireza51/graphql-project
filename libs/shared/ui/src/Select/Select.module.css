@@ -1,0 +1,19 @@
+.select > label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-left: 5px;
+  font-size: 18px;
+}
+
+.select > select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: 40px;
+  width: 100%;
+}
+.select > select:focus {
+  border: 1px solid rgb(97, 97, 97);
+  outline: none;
+}

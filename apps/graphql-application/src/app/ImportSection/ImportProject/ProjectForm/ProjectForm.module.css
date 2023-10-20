@@ -1,0 +1,29 @@
+.form {
+  padding: 0 5px;
+}
+.form > div {
+  margin-bottom: 10px;
+}
+.form > .form-btn {
+  display: flex;
+  gap: 8px;
+}
+.form > .form-btn > button {
+  padding: 12px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 14px;
+}
+.form > .form-btn > button[type='submit'] {
+  background-color: #3ba7ff;
+}
+.form > .form-btn > button[type='submit']:hover {
+  background-color: #5cb6ff;
+}
+.form > .form-btn > button[type='button'] {
+  background-color: #ff8888;
+}
+.form > .form-btn > button[type='button']:hover {
+  background-color: #ff9999;
+}

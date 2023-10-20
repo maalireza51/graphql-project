@@ -98,7 +98,14 @@ const mutation = new GraphQLObjectType({
         id: { type: new GraphQLNonNull(GraphQLID) },
       },
       resolve: async (_, args: { id: number | string }) => {
-        return await ClientModel.findByIdAndRemove(args.id);
+        try {
+          await ProjectModel.deleteMany({
+            clientId: args.id,
+          });
+          return await ClientModel.findByIdAndRemove(args.id);
+        } catch (error) {
+          console.log(error);
+        }
       },
     },
     updateClient: {

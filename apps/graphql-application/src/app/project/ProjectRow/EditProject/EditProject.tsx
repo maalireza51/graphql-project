@@ -1,22 +1,22 @@
 import { Modal } from '@shared/ui';
-import ClientForm, {
+import ProjectForm, {
   FormInitialValueType,
-} from '../../../ImportSection/ImportClient/ClientForm/ClientForm';
-import { GET_CLIENTS } from '../../../../queries/clients';
-import { ClientInterface } from '@shared/types';
+} from '../../../ImportSection/ImportProject/ProjectForm/ProjectForm';
+import { GET_PROJECTS } from '../../../../queries/projects';
+import { ProjectInterface } from '@shared/types';
 import { useMutation } from '@apollo/client';
-import { EDIT_CLIENT } from '../../../../mutations/clientMutations';
+import { EDIT_PROJECT } from '../../../../mutations/projectMutations';
 import { FormEvent } from 'react';
 
 /* eslint-disable-next-line */
-export interface EditClientProps {
-  initialClient: ClientInterface;
+export interface EditProjectProps {
+  initialProject: ProjectInterface;
   handleClose: () => void;
   open: boolean;
 }
 
-export function EditClient(props: EditClientProps) {
-  const [updateClient] = useMutation(EDIT_CLIENT);
+export function EditProject(props: EditProjectProps) {
+  const [updateProject] = useMutation(EDIT_PROJECT);
 
   const handleSubmit = async (
     e: FormEvent<HTMLFormElement>,
@@ -29,17 +29,17 @@ export function EditClient(props: EditClientProps) {
         ...(curr[1] && { [curr[0]]: curr[1] }),
       };
     }, {});
-    await updateClient({
+    await updateProject({
       variables: payload,
-      update(cache, { data: { updateClient } }) {
-        const data = cache.readQuery<{ clients: ClientInterface[] } | null>({
-          query: GET_CLIENTS,
+      update(cache, { data: { updateProject } }) {
+        const data = cache.readQuery<{ projects: ProjectInterface[] } | null>({
+          query: GET_PROJECTS,
         });
         cache.writeQuery({
-          query: GET_CLIENTS,
+          query: GET_PROJECTS,
           data: {
-            clients: data?.clients.map((item) => {
-              if (item.id === updateClient.id) return updateClient;
+            projects: data?.projects.map((item) => {
+              if (item.id === updateProject.id) return updateProject;
               return item;
             }),
           },
@@ -52,17 +52,17 @@ export function EditClient(props: EditClientProps) {
 
   return (
     <Modal
-      title="Edit Client"
+      title="Edit Project"
       open={props.open}
       handleClose={props.handleClose}
     >
-      <ClientForm
+      <ProjectForm
         handleClose={props.handleClose}
         handleSubmit={handleSubmit}
-        initialValues={props.initialClient}
+        initialValues={props.initialProject}
       />
     </Modal>
   );
 }
 
-export default EditClient;
+export default EditProject;

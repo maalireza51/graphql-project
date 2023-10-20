@@ -1,0 +1,37 @@
+.project {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding: 16px 100px;
+  font-weight: 700;
+}
+
+.project:hover {
+  background-color: #f0f0f0;
+}
+
+.project > p {
+  display: flex;
+  flex: 1 0 0%;
+  justify-content: center;
+  align-items: center;
+}
+
+.project .delete-btn {
+  color: #fff;
+  background-color: rgb(204, 0, 0);
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.project .delete-btn:hover {
+  background-color: rgb(204, 0, 0, 0.5);
+}
+
+.loading {
+  text-align: center;
+  padding-top: 50px;
+  font-size: 32px;
+}

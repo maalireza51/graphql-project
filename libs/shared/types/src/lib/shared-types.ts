@@ -6,10 +6,10 @@ export interface ClientInterface {
 }
 
 export interface ProjectInterface {
-  id: number;
-  clientId: number;
+  id: number | string;
+  clientId?: number | string;
   name: string;
   description: string;
   status: string;
-  client: ClientInterface;
+  client?: ClientInterface;
 }
